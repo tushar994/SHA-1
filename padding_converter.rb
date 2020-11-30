@@ -1,7 +1,7 @@
 module Converter
     def convert(string)
         # we have to take the string, and return the padded array, where each element in the array has 32/64 bits
-        # we are modifying the algorithm, such that we get an array of size n*16*(64) bits/ n*16*size_of_word bytes
+        # we are modifying the algorithm, such that we get an array of size n*16*(64/32) bits/ n*16*size_of_word bytes
         # now, we have a certain number of characters that contain 8 bits/ 1 byte each. 
         # we will use ord to get asci number of characters.
         size_of_word = 0.size
@@ -11,7 +11,7 @@ module Converter
         end
         size_of_string += 1
         no_of_words = size_of_string
-        puts "no_of_words is " + no_of_words.to_s
+        # puts "no_of_words is " + no_of_words.to_s
         # now, no_of_size_of_words is the number of words that we need to store padded string
         final_array = []
         integer = 0
@@ -34,7 +34,7 @@ module Converter
             # puts "i is "+ i.to_s
             final_array.insert(-2,0)
         end
-        puts "length of it is " + final_array.length.to_s
+        # puts "length of it is " + final_array.length.to_s
         return final_array
     end
 end
